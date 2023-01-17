@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>img2gd1.9</title>
+  </head>
+
+  <body>
+    <h2>Image to GD 1.9</h2>
+    Image URL <input id="image-input" onchange="changeImage(this.value)" value="/image.png"><br>
+    Color Accuracy (1-255): <input onchange="
+      rgbValue = Math.floor(255 / this.value);
+    " value="15"><br>
+    Size (Ingame Height): <input onchange="
+      updateSize(+this.value)
+    " value="10"><br>
+    <button onclick="
+      generateImage();
+      document.getElementById('strings').innerHTML = '';
+      document.getElementById('obj-count').innerHTML = blocks.reduce((a, b) => (typeof a == 'object' ? a.r + a.g + a.b : a) + b.r + b.g + b.b);
+    ">Generate</button><br>
+    <button onclick="
+      let v = (rgbValue + 256).toString(16).substring(1,3);
+      document.getElementById('strings').innerHTML = getLevelStrings() + `<br>Colors: #${v}0000, #00${v}00, #0000${v} (All blending)`;
+    ">Get Strings</button><br>
+    Strings:<p id="strings"></p>
+    Object Count: <div id="obj-count"></div>
+    Preview:
+    
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
