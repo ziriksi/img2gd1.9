@@ -1,12 +1,18 @@
 # img to gd 1.9
 use it here: https://img2gd19.6w6.repl.co
+
 makes an image in geometry dash using only 3 color channels (for 1.9 gdps)
+
 using this is pretty unintuitive but its better than doing it by hand so bear with me
 
 prerequsites:
+
 https://github.com/WEGFan/Geometry-Dash-Savefile-Editor
+
 https://github.com/HJfod/gdshare
+
 https://github.com/HJfod/BetterEdit
+
 https://github.com/matcool/mats-nice-hacks
 
 # step 1 - get the object string and colors
